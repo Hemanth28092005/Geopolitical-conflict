@@ -6,16 +6,25 @@ from backend.m2_storage.models.models import Country, Commodity
 from backend.core.logger import logger
 
 COUNTRIES = [
-    {"iso_code": "USA", "name": "United States",   "region": "North America", "gdp_usd": 25.46e12},
-    {"iso_code": "CHN", "name": "China",            "region": "Asia",          "gdp_usd": 17.96e12},
-    {"iso_code": "RUS", "name": "Russia",           "region": "Europe/Asia",   "gdp_usd": 2.24e12},
-    {"iso_code": "DEU", "name": "Germany",          "region": "Europe",        "gdp_usd": 4.07e12},
-    {"iso_code": "IND", "name": "India",            "region": "Asia",          "gdp_usd": 3.39e12},
-    {"iso_code": "SAU", "name": "Saudi Arabia",     "region": "Middle East",   "gdp_usd": 1.06e12},
-    {"iso_code": "JPN", "name": "Japan",            "region": "Asia",          "gdp_usd": 4.23e12},
-    {"iso_code": "GBR", "name": "United Kingdom",   "region": "Europe",        "gdp_usd": 3.07e12},
-    {"iso_code": "FRA", "name": "France",           "region": "Europe",        "gdp_usd": 2.78e12},
-    {"iso_code": "BRA", "name": "Brazil",           "region": "South America", "gdp_usd": 1.92e12},
+    {"iso_code": "USA", "name": "United States",  "region": "North America", "gdp_usd": 25.46e12},
+    {"iso_code": "CHN", "name": "China",           "region": "Asia",          "gdp_usd": 17.96e12},
+    {"iso_code": "RUS", "name": "Russia",          "region": "Europe/Asia",   "gdp_usd": 2.24e12},
+    {"iso_code": "DEU", "name": "Germany",         "region": "Europe",        "gdp_usd": 4.07e12},
+    {"iso_code": "IND", "name": "India",           "region": "Asia",          "gdp_usd": 3.39e12},
+    {"iso_code": "SAU", "name": "Saudi Arabia",    "region": "Middle East",   "gdp_usd": 1.06e12},
+    {"iso_code": "JPN", "name": "Japan",           "region": "Asia",          "gdp_usd": 4.23e12},
+    {"iso_code": "GBR", "name": "United Kingdom",  "region": "Europe",        "gdp_usd": 3.07e12},
+    {"iso_code": "FRA", "name": "France",          "region": "Europe",        "gdp_usd": 2.78e12},
+    {"iso_code": "BRA", "name": "Brazil",          "region": "South America", "gdp_usd": 1.92e12},
+    {"iso_code": "IRQ", "name": "Iraq",            "region": "Middle East",   "gdp_usd": 0.25e12},
+    {"iso_code": "ARE", "name": "UAE",             "region": "Middle East",   "gdp_usd": 0.50e12},
+    {"iso_code": "KOR", "name": "South Korea",     "region": "Asia",          "gdp_usd": 1.67e12},
+    {"iso_code": "BGD", "name": "Bangladesh",      "region": "Asia",          "gdp_usd": 0.46e12},
+    {"iso_code": "IDN", "name": "Indonesia",       "region": "Asia",          "gdp_usd": 1.32e12},
+    {"iso_code": "EGY", "name": "Egypt",           "region": "Africa",        "gdp_usd": 0.39e12},
+    {"iso_code": "AUS", "name": "Australia",       "region": "Oceania",       "gdp_usd": 1.69e12},
+    {"iso_code": "CHL", "name": "Chile",           "region": "South America", "gdp_usd": 0.30e12},
+    {"iso_code": "VNM", "name": "Vietnam",         "region": "Asia",          "gdp_usd": 0.41e12},
 ]
 
 COMMODITIES = [

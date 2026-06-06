@@ -39,3 +39,47 @@ HINT:  If you're creating a hypertable on a table with a primary key, ensure the
 2026-06-06 13:51:42.234 | INFO     | __main__:seed:41 - Seeded 10 countries
 2026-06-06 13:51:42.262 | INFO     | __main__:seed:51 - Seeded 8 commodities
 2026-06-06 13:51:42.263 | INFO     | __main__:seed:55 - Seed complete.
+2026-06-06 16:55:01.855 | INFO     | backend.m1_ingestion.workers.graph_builder:build_trade_graph:79 - Building trade graph...
+2026-06-06 16:55:02.084 | INFO     | backend.m1_ingestion.workers.graph_builder:build_trade_graph:106 - Graph built — 10 nodes, 0 edges, 0 articles queued
+2026-06-06 16:55:33.686 | DEBUG    | backend.m1_ingestion.utils.text_preprocessor:fetch_article_text:70 - Article fetch failed for https://arynews.tv/ppp-ajk-parliamentary-party-mull-over-azad-kashmirs-situation: timed out
+2026-06-06 16:56:09.382 | INFO     | backend.m1_ingestion.workers.stream_worker:fetch_gdelt_news:65 - Starting GDELT fetch...
+2026-06-06 16:56:10.096 | INFO     | backend.m1_ingestion.workers.stream_worker:fetch_gdelt_news:74 - Fetching: http://data.gdeltproject.org/gdeltv2/20260606113000.export.CSV.zip
+2026-06-06 16:56:10.385 | INFO     | backend.m1_ingestion.workers.stream_worker:fetch_gdelt_news:138 - GDELT fetch complete — stored 0 events
+2026-06-06 16:59:31.404 | INFO     | backend.m1_ingestion.workers.stream_worker:fetch_gdelt_news:91 - Starting GDELT fetch...
+2026-06-06 16:59:31.867 | INFO     | backend.m1_ingestion.workers.stream_worker:fetch_gdelt_news:99 - Fetching: http://data.gdeltproject.org/gdeltv2/20260606113000.export.CSV.zip
+2026-06-06 16:59:32.611 | INFO     | backend.m1_ingestion.workers.stream_worker:fetch_gdelt_news:157 - GDELT fetch complete — stored 100 events (skipped 92 no-country rows)
+2026-06-06 17:00:07.901 | INFO     | backend.m1_ingestion.workers.graph_builder:build_trade_graph:79 - Building trade graph...
+2026-06-06 17:00:08.137 | INFO     | backend.m1_ingestion.workers.graph_builder:build_trade_graph:97 - Pushed 50 article URLs to Redis for M3
+2026-06-06 17:00:08.138 | INFO     | backend.m1_ingestion.workers.graph_builder:build_trade_graph:106 - Graph built — 10 nodes, 0 edges, 50 articles queued
+2026-06-06 17:00:27.409 | INFO     | backend.m1_ingestion.workers.batch_worker:fetch_comtrade_data:108 - Starting Comtrade batch fetch...
+2026-06-06 17:00:29.941 | WARNING  | backend.m1_ingestion.workers.batch_worker:fetch_single_route:45 - Comtrade rate limit hit for USA/2711
+2026-06-06 17:00:36.826 | WARNING  | backend.m1_ingestion.workers.batch_worker:fetch_single_route:45 - Comtrade rate limit hit for USA/1005
+2026-06-06 17:00:50.953 | DEBUG    | backend.m1_ingestion.workers.batch_worker:fetch_single_route:56 - No Comtrade data for RUS/2709
+2026-06-06 17:00:51.844 | DEBUG    | backend.m1_ingestion.workers.batch_worker:fetch_single_route:56 - No Comtrade data for RUS/2711
+2026-06-06 17:00:52.948 | DEBUG    | backend.m1_ingestion.workers.batch_worker:fetch_single_route:56 - No Comtrade data for RUS/1001
+2026-06-06 17:00:54.102 | DEBUG    | backend.m1_ingestion.workers.batch_worker:fetch_single_route:56 - No Comtrade data for RUS/8542
+2026-06-06 17:00:56.184 | DEBUG    | backend.m1_ingestion.workers.batch_worker:fetch_single_route:56 - No Comtrade data for RUS/7206
+2026-06-06 17:00:57.304 | DEBUG    | backend.m1_ingestion.workers.batch_worker:fetch_single_route:56 - No Comtrade data for RUS/2805
+2026-06-06 17:00:58.452 | DEBUG    | backend.m1_ingestion.workers.batch_worker:fetch_single_route:56 - No Comtrade data for RUS/1005
+2026-06-06 17:00:59.248 | WARNING  | backend.m1_ingestion.workers.batch_worker:fetch_single_route:45 - Comtrade rate limit hit for RUS/2825
+2026-06-06 17:01:16.487 | DEBUG    | backend.m1_ingestion.workers.batch_worker:fetch_single_route:56 - No Comtrade data for IND/2709
+2026-06-06 17:01:17.624 | DEBUG    | backend.m1_ingestion.workers.batch_worker:fetch_single_route:56 - No Comtrade data for IND/2711
+2026-06-06 17:01:18.844 | DEBUG    | backend.m1_ingestion.workers.batch_worker:fetch_single_route:56 - No Comtrade data for IND/1001
+2026-06-06 17:01:19.935 | DEBUG    | backend.m1_ingestion.workers.batch_worker:fetch_single_route:56 - No Comtrade data for IND/8542
+2026-06-06 17:01:20.937 | DEBUG    | backend.m1_ingestion.workers.batch_worker:fetch_single_route:56 - No Comtrade data for IND/7206
+2026-06-06 17:01:21.914 | WARNING  | backend.m1_ingestion.workers.batch_worker:fetch_single_route:45 - Comtrade rate limit hit for IND/2805
+2026-06-06 17:01:22.903 | DEBUG    | backend.m1_ingestion.workers.batch_worker:fetch_single_route:56 - No Comtrade data for IND/1005
+2026-06-06 17:01:23.764 | WARNING  | backend.m1_ingestion.workers.batch_worker:fetch_single_route:45 - Comtrade rate limit hit for IND/2825
+2026-06-06 17:01:26.739 | WARNING  | backend.m1_ingestion.workers.batch_worker:fetch_single_route:45 - Comtrade rate limit hit for SAU/1001
+2026-06-06 17:01:31.373 | DEBUG    | backend.m1_ingestion.workers.batch_worker:fetch_single_route:56 - No Comtrade data for SAU/7206
+2026-06-06 17:01:32.141 | WARNING  | backend.m1_ingestion.workers.batch_worker:fetch_single_route:45 - Comtrade rate limit hit for SAU/2805
+2026-06-06 17:01:35.377 | DEBUG    | backend.m1_ingestion.workers.batch_worker:fetch_single_route:56 - No Comtrade data for JPN/2709
+2026-06-06 17:02:31.379 | INFO     | backend.m1_ingestion.workers.batch_worker:fetch_comtrade_data:122 - Comtrade batch complete — 0 routes updated
+2026-06-06 17:36:52.558 | INFO     | __main__:seed:52 - Countries already seeded, skipping
+2026-06-06 17:36:52.563 | INFO     | __main__:seed:62 - Commodities already seeded, skipping
+2026-06-06 17:36:52.564 | INFO     | __main__:seed:64 - Seed complete.
+2026-06-06 17:37:05.653 | INFO     | __main__:seed_routes:89 - Added 9 new countries
+2026-06-06 17:37:05.849 | INFO     | __main__:seed_routes:120 - Seeded 29 India-centric trade routes (0 skipped)
+2026-06-06 17:37:27.946 | INFO     | backend.m1_ingestion.workers.graph_builder:build_trade_graph:79 - Building trade graph...
+2026-06-06 17:37:28.109 | INFO     | backend.m1_ingestion.workers.graph_builder:build_trade_graph:97 - Pushed 50 article URLs to Redis for M3
+2026-06-06 17:37:28.109 | INFO     | backend.m1_ingestion.workers.graph_builder:build_trade_graph:106 - Graph built — 19 nodes, 19 edges, 50 articles queued
