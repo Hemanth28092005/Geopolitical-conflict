@@ -1,0 +1,41 @@
+2026-06-06 13:47:34.533 | INFO     | __main__:init_db:14 - Creating all tables...
+2026-06-06 13:47:34.888 | INFO     | __main__:init_db:18 - Tables created successfully
+2026-06-06 13:47:34.909 | WARNING  | __main__:init_db:35 - Hypertable hostility_scores skipped: (psycopg2.DatabaseError) cannot create a unique index without the column "time" (used in partitioning)
+HINT:  If you're creating a hypertable on a table with a primary key, ensure the partitioning column is part of the primary or composite key.
+
+[SQL: SELECT create_hypertable('hostility_scores', 'time', if_not_exists => TRUE);]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2026-06-06 13:47:34.913 | WARNING  | __main__:init_db:35 - Hypertable trade_events skipped: (psycopg2.errors.InFailedSqlTransaction) current transaction is aborted, commands ignored until end of transaction block
+
+[SQL: SELECT create_hypertable('trade_events', 'time', if_not_exists => TRUE);]
+(Background on this error at: https://sqlalche.me/e/20/2j85)
+2026-06-06 13:47:34.916 | WARNING  | __main__:init_db:35 - Hypertable forecast_results skipped: (psycopg2.errors.InFailedSqlTransaction) current transaction is aborted, commands ignored until end of transaction block
+
+[SQL: SELECT create_hypertable('forecast_results', 'time', if_not_exists => TRUE);]
+(Background on this error at: https://sqlalche.me/e/20/2j85)
+2026-06-06 13:47:34.919 | INFO     | __main__:init_db:37 - Database initialised. Phase 2 complete.
+2026-06-06 13:48:56.251 | INFO     | __main__:init_db:14 - Creating all tables...
+2026-06-06 13:48:56.365 | INFO     | __main__:init_db:18 - Tables created successfully
+2026-06-06 13:48:56.373 | WARNING  | __main__:init_db:35 - Hypertable hostility_scores skipped: (psycopg2.DatabaseError) cannot create a unique index without the column "time" (used in partitioning)
+HINT:  If you're creating a hypertable on a table with a primary key, ensure the partitioning column is part of the primary or composite key.
+
+[SQL: SELECT create_hypertable('hostility_scores', 'time', if_not_exists => TRUE);]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2026-06-06 13:48:56.376 | WARNING  | __main__:init_db:35 - Hypertable trade_events skipped: (psycopg2.errors.InFailedSqlTransaction) current transaction is aborted, commands ignored until end of transaction block
+
+[SQL: SELECT create_hypertable('trade_events', 'time', if_not_exists => TRUE);]
+(Background on this error at: https://sqlalche.me/e/20/2j85)
+2026-06-06 13:48:56.379 | WARNING  | __main__:init_db:35 - Hypertable forecast_results skipped: (psycopg2.errors.InFailedSqlTransaction) current transaction is aborted, commands ignored until end of transaction block
+
+[SQL: SELECT create_hypertable('forecast_results', 'time', if_not_exists => TRUE);]
+(Background on this error at: https://sqlalche.me/e/20/2j85)
+2026-06-06 13:48:56.381 | INFO     | __main__:init_db:37 - Database initialised. Phase 2 complete.
+2026-06-06 13:49:53.378 | INFO     | __main__:init_db:14 - Creating all tables...
+2026-06-06 13:49:53.543 | INFO     | __main__:init_db:18 - Tables created successfully
+2026-06-06 13:49:53.561 | INFO     | __main__:init_db:33 - Hypertable created: hostility_scores
+2026-06-06 13:49:53.574 | INFO     | __main__:init_db:33 - Hypertable created: trade_events
+2026-06-06 13:49:53.590 | INFO     | __main__:init_db:33 - Hypertable created: forecast_results
+2026-06-06 13:49:53.591 | INFO     | __main__:init_db:37 - Database initialised. Phase 2 complete.
+2026-06-06 13:51:42.234 | INFO     | __main__:seed:41 - Seeded 10 countries
+2026-06-06 13:51:42.262 | INFO     | __main__:seed:51 - Seeded 8 commodities
+2026-06-06 13:51:42.263 | INFO     | __main__:seed:55 - Seed complete.
