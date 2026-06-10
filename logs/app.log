@@ -89,3 +89,19 @@ HINT:  If you're creating a hypertable on a table with a primary key, ensure the
 2026-06-10 12:20:57.010 | INFO     | backend.m3_sentiment.sentiment_engine:process_pending_articles:91 - Scored 10 articles (0 failed/paywalled)
 2026-06-10 12:20:57.116 | INFO     | backend.m3_sentiment.models.score_aggregator:aggregate_and_store:80 - Aggregated 3 country-pair hostility scores
 2026-06-10 12:20:57.127 | INFO     | backend.m3_sentiment.models.anomaly_detector:detect_anomalies:61 - Anomaly detection complete — 0 spikes flagged
+2026-06-10 12:40:11.889 | INFO     | backend.m4_trade.trade_intelligence:run_trade_intelligence:19 - Running trade intelligence pipeline...
+2026-06-10 12:40:12.043 | INFO     | backend.m4_trade.utils.feature_engineer:build_training_dataset:135 - Built training dataset: 29 routes, 0 high-risk
+2026-06-10 12:40:12.047 | WARNING  | backend.m4_trade.models.route_risk_model:train:33 - Only one class in labels — using synthetic variation
+2026-06-10 12:40:12.442 | INFO     | backend.m4_trade.models.route_risk_model:train:58 - Route Risk Model trained:
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00         6
+
+    accuracy                           1.00         6
+   macro avg       1.00      1.00      1.00         6
+weighted avg       1.00      1.00      1.00         6
+
+2026-06-10 12:40:12.446 | INFO     | backend.m4_trade.models.route_risk_model:train:63 - Model saved to data/processed/route_risk_model.pkl
+2026-06-10 12:40:14.104 | INFO     | backend.m4_trade.models.demand_forecaster:train:67 - Demand Forecaster trained — MAE: 7.46, R²: -0.221
+2026-06-10 12:40:14.106 | INFO     | backend.m4_trade.models.demand_forecaster:train:71 - Demand forecaster saved to data/processed/demand_forecaster.pkl
+2026-06-10 12:40:15.431 | INFO     | backend.m4_trade.trade_intelligence:run_trade_intelligence:97 - Trade intelligence complete — 29 routes scored

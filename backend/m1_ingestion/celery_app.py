@@ -12,7 +12,8 @@ celery_app = Celery(
         "backend.m1_ingestion.workers.stream_worker",
         "backend.m1_ingestion.workers.batch_worker",
         "backend.m1_ingestion.workers.graph_builder",
-        "backend.m3_sentiment.sentiment_engine",      # ← add this
+        "backend.m3_sentiment.sentiment_engine",
+        "backend.m4_trade.trade_intelligence",        # ← add this
     ]
 )
 
@@ -39,6 +40,10 @@ celery_app.conf.beat_schedule = {
     "comtrade-batch-daily": {
         "task": "backend.m1_ingestion.workers.batch_worker.fetch_comtrade_data",
         "schedule": crontab(hour=2, minute=0),
+    },
+    "trade-intelligence-daily": {               # ← add this
+        "task": "backend.m4_trade.trade_intelligence.run_trade_intelligence_task",
+        "schedule": crontab(hour=3, minute=0),
     },
     "graph-rebuild-hourly": {
         "task": "backend.m1_ingestion.workers.graph_builder.build_trade_graph",
