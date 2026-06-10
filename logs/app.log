@@ -83,3 +83,9 @@ HINT:  If you're creating a hypertable on a table with a primary key, ensure the
 2026-06-06 17:37:27.946 | INFO     | backend.m1_ingestion.workers.graph_builder:build_trade_graph:79 - Building trade graph...
 2026-06-06 17:37:28.109 | INFO     | backend.m1_ingestion.workers.graph_builder:build_trade_graph:97 - Pushed 50 article URLs to Redis for M3
 2026-06-06 17:37:28.109 | INFO     | backend.m1_ingestion.workers.graph_builder:build_trade_graph:106 - Graph built — 19 nodes, 19 edges, 50 articles queued
+2026-06-10 12:17:38.763 | INFO     | backend.m3_sentiment.sentiment_engine:process_pending_articles:25 - Sentiment engine starting — 50 articles in queue
+2026-06-10 12:17:39.580 | INFO     | backend.m3_sentiment.models.roberta_scorer:get_classifier:11 - Loading RoBERTa sentiment model...
+2026-06-10 12:20:44.055 | INFO     | backend.m3_sentiment.models.roberta_scorer:get_classifier:18 - RoBERTa model loaded
+2026-06-10 12:20:57.010 | INFO     | backend.m3_sentiment.sentiment_engine:process_pending_articles:91 - Scored 10 articles (0 failed/paywalled)
+2026-06-10 12:20:57.116 | INFO     | backend.m3_sentiment.models.score_aggregator:aggregate_and_store:80 - Aggregated 3 country-pair hostility scores
+2026-06-10 12:20:57.127 | INFO     | backend.m3_sentiment.models.anomaly_detector:detect_anomalies:61 - Anomaly detection complete — 0 spikes flagged

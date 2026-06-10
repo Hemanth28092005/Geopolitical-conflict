@@ -12,6 +12,7 @@ celery_app = Celery(
         "backend.m1_ingestion.workers.stream_worker",
         "backend.m1_ingestion.workers.batch_worker",
         "backend.m1_ingestion.workers.graph_builder",
+        "backend.m3_sentiment.sentiment_engine",      # ← add this
     ]
 )
 
@@ -26,19 +27,19 @@ celery_app.conf.update(
     worker_prefetch_multiplier=1,
 )
 
-# Scheduled tasks
 celery_app.conf.beat_schedule = {
-    # GDELT stream every 15 minutes
     "gdelt-stream-every-15-min": {
         "task": "backend.m1_ingestion.workers.stream_worker.fetch_gdelt_news",
         "schedule": crontab(minute="*/15"),
     },
-    # Comtrade batch once a day
+    "sentiment-pipeline-every-15-min": {       # ← add this
+        "task": "backend.m3_sentiment.sentiment_engine.run_sentiment_pipeline",
+        "schedule": crontab(minute="*/15"),
+    },
     "comtrade-batch-daily": {
         "task": "backend.m1_ingestion.workers.batch_worker.fetch_comtrade_data",
         "schedule": crontab(hour=2, minute=0),
     },
-    # Graph rebuild every hour
     "graph-rebuild-hourly": {
         "task": "backend.m1_ingestion.workers.graph_builder.build_trade_graph",
         "schedule": crontab(minute=0),
