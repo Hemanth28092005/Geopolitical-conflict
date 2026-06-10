@@ -105,3 +105,21 @@ weighted avg       1.00      1.00      1.00         6
 2026-06-10 12:40:14.104 | INFO     | backend.m4_trade.models.demand_forecaster:train:67 - Demand Forecaster trained — MAE: 7.46, R²: -0.221
 2026-06-10 12:40:14.106 | INFO     | backend.m4_trade.models.demand_forecaster:train:71 - Demand forecaster saved to data/processed/demand_forecaster.pkl
 2026-06-10 12:40:15.431 | INFO     | backend.m4_trade.trade_intelligence:run_trade_intelligence:97 - Trade intelligence complete — 29 routes scored
+2026-06-10 12:48:19.670 | INFO     | backend.m5_simulation.whatif_engine:run_whatif:36 - Running what-if simulation: 'Russia oil cutoff 50pct' with 1 shock(s)
+2026-06-10 12:48:19.688 | WARNING  | backend.m5_simulation.graph_loader:load_graph_from_redis:18 - No trade graph in Redis — rebuild needed
+2026-06-10 12:48:19.688 | INFO     | backend.m5_simulation.graph_loader:load_graph_from_db:33 - Building graph from DB (Redis cache miss)...
+2026-06-10 12:48:19.746 | INFO     | backend.m5_simulation.graph_loader:load_graph_from_db:69 - Graph built from DB: 19 nodes, 19 edges
+2026-06-10 12:48:19.748 | INFO     | backend.m5_simulation.cascade_engine:run_cascade:127 - BFS cascade complete — 2 nodes affected, 1 edges impacted
+2026-06-10 12:48:19.798 | INFO     | backend.m5_simulation.whatif_engine:run_whatif:81 - Simulation 'Russia oil cutoff 50pct' saved to DB
+2026-06-10 12:48:19.799 | INFO     | backend.m5_simulation.whatif_engine:run_whatif:36 - Running what-if simulation: 'China semiconductor ban' with 1 shock(s)
+2026-06-10 12:48:19.803 | WARNING  | backend.m5_simulation.graph_loader:load_graph_from_redis:18 - No trade graph in Redis — rebuild needed
+2026-06-10 12:48:19.803 | INFO     | backend.m5_simulation.graph_loader:load_graph_from_db:33 - Building graph from DB (Redis cache miss)...
+2026-06-10 12:48:19.818 | INFO     | backend.m5_simulation.graph_loader:load_graph_from_db:69 - Graph built from DB: 19 nodes, 19 edges
+2026-06-10 12:48:19.820 | INFO     | backend.m5_simulation.cascade_engine:run_cascade:127 - BFS cascade complete — 2 nodes affected, 1 edges impacted
+2026-06-10 12:48:19.878 | INFO     | backend.m5_simulation.whatif_engine:run_whatif:81 - Simulation 'China semiconductor ban' saved to DB
+2026-06-10 12:48:19.879 | INFO     | backend.m5_simulation.whatif_engine:run_whatif:36 - Running what-if simulation: 'Middle East energy crisis' with 2 shock(s)
+2026-06-10 12:48:19.883 | WARNING  | backend.m5_simulation.graph_loader:load_graph_from_redis:18 - No trade graph in Redis — rebuild needed
+2026-06-10 12:48:19.884 | INFO     | backend.m5_simulation.graph_loader:load_graph_from_db:33 - Building graph from DB (Redis cache miss)...
+2026-06-10 12:48:19.901 | INFO     | backend.m5_simulation.graph_loader:load_graph_from_db:69 - Graph built from DB: 19 nodes, 19 edges
+2026-06-10 12:48:19.903 | INFO     | backend.m5_simulation.cascade_engine:run_cascade:127 - BFS cascade complete — 2 nodes affected, 1 edges impacted
+2026-06-10 12:48:19.957 | INFO     | backend.m5_simulation.whatif_engine:run_whatif:81 - Simulation 'Middle East energy crisis' saved to DB
