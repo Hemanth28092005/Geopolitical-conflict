@@ -123,3 +123,18 @@ weighted avg       1.00      1.00      1.00         6
 2026-06-10 12:48:19.901 | INFO     | backend.m5_simulation.graph_loader:load_graph_from_db:69 - Graph built from DB: 19 nodes, 19 edges
 2026-06-10 12:48:19.903 | INFO     | backend.m5_simulation.cascade_engine:run_cascade:127 - BFS cascade complete — 2 nodes affected, 1 edges impacted
 2026-06-10 12:48:19.957 | INFO     | backend.m5_simulation.whatif_engine:run_whatif:81 - Simulation 'Middle East energy crisis' saved to DB
+2026-06-10 13:23:21.517 | INFO     | backend.m6_api.main:lifespan:14 - FastAPI started — live feed running
+2026-06-10 13:40:57.022 | INFO     | backend.m6_api.main:lifespan:17 - FastAPI shutting down
+2026-06-10 13:40:58.741 | INFO     | backend.m6_api.main:lifespan:14 - FastAPI started — live feed running
+2026-06-10 13:42:15.703 | INFO     | backend.m6_api.main:lifespan:17 - FastAPI shutting down
+2026-06-10 20:50:13.223 | INFO     | backend.m6_api.main:lifespan:17 - FastAPI started — live feed running
+2026-06-10 20:51:00.582 | INFO     | backend.m6_api.websocket.broadcaster:connect:14 - WS client connected — total: 1
+2026-06-10 20:51:00.600 | INFO     | backend.m6_api.websocket.broadcaster:connect:14 - WS client connected — total: 2
+2026-06-10 20:51:00.607 | INFO     | backend.m6_api.websocket.broadcaster:disconnect:20 - WS client disconnected — total: 1
+2026-06-10 20:51:00.612 | INFO     | backend.m6_api.websocket.broadcaster:disconnect:20 - WS client disconnected — total: 0
+2026-06-10 20:51:33.742 | INFO     | backend.m5_simulation.whatif_engine:run_whatif:36 - Running what-if simulation: 'Frontend integration check' with 1 shock(s)
+2026-06-10 20:51:33.753 | WARNING  | backend.m5_simulation.graph_loader:load_graph_from_redis:18 - No trade graph in Redis — rebuild needed
+2026-06-10 20:51:33.757 | INFO     | backend.m5_simulation.graph_loader:load_graph_from_db:33 - Building graph from DB (Redis cache miss)...
+2026-06-10 20:51:33.778 | INFO     | backend.m5_simulation.graph_loader:load_graph_from_db:69 - Graph built from DB: 19 nodes, 19 edges
+2026-06-10 20:51:33.783 | INFO     | backend.m5_simulation.cascade_engine:run_cascade:127 - BFS cascade complete — 2 nodes affected, 1 edges impacted
+2026-06-10 20:51:33.846 | INFO     | backend.m5_simulation.whatif_engine:run_whatif:81 - Simulation 'Frontend integration check' saved to DB

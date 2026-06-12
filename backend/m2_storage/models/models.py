@@ -73,43 +73,52 @@ class Alliance(Base):
 class HostilityScore(Base):
     __tablename__ = "hostility_scores"
 
-    time = Column(DateTime(timezone=True), nullable=False, primary_key=True)
-    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    time         = Column(DateTime(timezone=True), nullable=False, primary_key=True)
+    id           = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     country_a_id = Column(UUID(as_uuid=True), ForeignKey("countries.id"), nullable=False)
     country_b_id = Column(UUID(as_uuid=True), ForeignKey("countries.id"), nullable=False)
-    score = Column(Float, nullable=False)
-    is_anomaly = Column(Boolean, default=False)
+    score        = Column(Float, nullable=False)
+    is_anomaly   = Column(Boolean, default=False)
     source_count = Column(Integer)
-    raw_scores = Column(JSON)
-    created_at = Column(DateTime(timezone=True), server_default=func.now())
+    raw_scores   = Column(JSON)
+    created_at   = Column(DateTime(timezone=True), server_default=func.now())
+
+    # Relationships
+    country_a = relationship("Country", foreign_keys=[country_a_id])
+    country_b = relationship("Country", foreign_keys=[country_b_id])
 
 
 class TradeEvent(Base):
     __tablename__ = "trade_events"
 
-    time = Column(DateTime(timezone=True), nullable=False, primary_key=True)
-    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    time       = Column(DateTime(timezone=True), nullable=False, primary_key=True)
+    id         = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     country_id = Column(UUID(as_uuid=True), ForeignKey("countries.id"), nullable=False)
     event_type = Column(String(50))
     description = Column(Text)
-    severity = Column(Float)
+    severity   = Column(Float)
     source_url = Column(Text)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
+
+    # Relationship
+    country = relationship("Country", foreign_keys=[country_id])
 
 
 class ForecastResult(Base):
     __tablename__ = "forecast_results"
 
-    time = Column(DateTime(timezone=True), nullable=False, primary_key=True)
-    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    time           = Column(DateTime(timezone=True), nullable=False, primary_key=True)
+    id             = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     trade_route_id = Column(UUID(as_uuid=True), ForeignKey("trade_routes.id"), nullable=False)
-    model_name = Column(String(50))
+    model_name     = Column(String(50))
     forecast_value = Column(Float)
-    lower_bound = Column(Float)
-    upper_bound = Column(Float)
-    horizon_days = Column(Integer)
-    created_at = Column(DateTime(timezone=True), server_default=func.now())
+    lower_bound    = Column(Float)
+    upper_bound    = Column(Float)
+    horizon_days   = Column(Integer)
+    created_at     = Column(DateTime(timezone=True), server_default=func.now())
 
+    # Relationship
+    trade_route = relationship("TradeRoute", foreign_keys=[trade_route_id])
 
 class SimulationRun(Base):
     __tablename__ = "simulation_runs"

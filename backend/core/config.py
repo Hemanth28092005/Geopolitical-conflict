@@ -12,6 +12,7 @@ class Settings(BaseSettings):
     app_env: str = "development"
     secret_key: str = "dev-secret"
     log_level: str = "INFO"
+    cors_origins: str = "http://localhost:5173,http://127.0.0.1:5173,http://localhost:3000"
 
     class Config:
         env_file = str(ROOT_DIR / ".env")
